@@ -40,9 +40,24 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\TelegramCLI.cs" />
+    <Compile Include="Parser\JSONParser.cs" />
+    <Compile Include="Core\Poll.cs" />
+    <Compile Include="Log\InternalLogger.cs" />
+    <Compile Include="Core\CSocket.cs" />
+    <Compile Include="Model\TelegramModel.cs" />
+    <Compile Include="Model\TelegramEndPointModel.cs" />
+    <Compile Include="Misc\Misc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parser\" />
+    <Folder Include="Core\" />
+    <Folder Include="Log\" />
+    <Folder Include="Model\" />
+    <Folder Include="Misc\" />
   </ItemGroup>
 </Project>

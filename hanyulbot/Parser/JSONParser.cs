@@ -2,21 +2,22 @@
  * 				Hanyul Bot - Ha:nyul (ㅎㅏㄴㅠㄹ) Telegram Bot
  * 		
  * 				
- * 		File Name 	: Program.cs (Program.cs)
+ * 		File Name 	: JSONParser.cs (Parser/JSONParser.cs)
  * 		Author 		: Sokdak (a.k.a k3nuku)
  * 		Created at	: Fri Dec 11, 2015.
- * 		Description : Defines where program starts
+ * 		Description : A module that parsing JSON strings and deserializing them
  * 
  */
 using System;
+using Newtonsoft.Json;
 
 namespace hanyulbot
 {
-	class MainClass
+	public class JSONParser
 	{
-		public static void Main (string[] args)
+		public JSONParser ()
 		{
-			Console.WriteLine ("Hello World!");
 		}
 	}
 }
+
