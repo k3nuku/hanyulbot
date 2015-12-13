@@ -1,5 +1,15 @@
-﻿using Mono.Unix;
+﻿/*
+ * 				Hanyul Bot - Ha:nyul (ㅎㅏㄴㅠㄹ) Telegram Bot
+ * 		
+ * 				
+ * 		File Name 	: Misc.cs (Misc/Misc.cs)
+ * 		Author 		: Sokdak (a.k.a k3nuku)
+ * 		Created at	: Fri Dec 11, 2015.
+ * 		Description : Miscellaneous functions
+ * 
+ */
 using System;
+using Mono.Unix;
 
 namespace hanyulbot
 {
@@ -10,12 +20,9 @@ namespace hanyulbot
 		/// </summary>
 		/// <returns>The UTF-8 bytes of origin string</returns>
 		/// <param name="input">string</param>
-		public static byte[] ConvertToUTF8Bytes(string input, long size=0)
+		public static byte[] ConvertToUTF8Bytes(string input)
 		{
-			if (size == 0)
-				return UnixEncoding.UTF8.GetBytes (input);
-			else
-				return UnixEncoding.UTF8.GetBytes (input, 0, size);
+			return UnixEncoding.UTF8.GetBytes (input);
 		}
 
 		/// <summary>
@@ -23,9 +30,12 @@ namespace hanyulbot
 		/// </summary>
 		/// <returns>The UTF-8 string of origin bytes</returns>
 		/// <param name="input">bytes</param>
-		public static string ConvertToUTF8String(byte[] input)
+		public static string ConvertToUTF8String(byte[] input, int size=0)
 		{
-			return UnixEncoding.UTF8.GetString (input);
+			if (size == 0)
+				return UnixEncoding.UTF8.GetString (input);
+			else
+				return UnixEncoding.UTF8.GetString (input, 0, size);
 		}
 	}
 }

@@ -8,21 +8,21 @@
  * 		Description : A Serializable model of Telegram EndPoint(Recipent, Sender)
  * 
  */
-using System;
-
 namespace hanyulbot
 {
 	public class TelegramEndPointModel
 	{
-		public string id;
-		public string type;
-		public string username;
-		public string print_name;
-		public string flags;
-		public string first_name;
-		public string when;
-		public string phone;
-		public string last_name;
+		public int id { get; set; }
+		public string type { get; set; }
+		public string username { get; set; }
+		public string print_name { get; set; }
+		public int flags { get; set; }
+		public string first_name { get; set; }
+		public string when { get; set; }
+		public string phone { get; set; }
+		public string last_name { get; set; }
+
+		public TelegramEndPointModel admin { get; set; } // for group chat
 	}
 }
 

@@ -8,23 +8,22 @@
  * 		Description : A Serializable model of Telegram basics
  * 
  */
-using System;
-
 namespace hanyulbot
 {
 	public class TelegramModel
 	{
-		public string @out;
-		public string @event;
-		public string id;
-		public string flags;
-		public string text;
-		public string service;
-		public string unread;
-		public string date;
+		public string @event { get; set; }
+		public string service { get; set; }
+		public int id { get; set; }
+		public bool unread { get; set; }
+		public int flags { get; set; }
+		public string text { get; set; }
+		public bool @out { get; set; }
+		public string date { get; set; }
 
-		public TelegramEndPointModel @to;
-		public TelegramEndPointModel @from;
+		public TelegramEndPointModel @to { get; set; }
+		public TelegramEndPointModel @from { get; set; }
+		public TelegramMediaModel media { get; set; } // for media
 	}
 }
 

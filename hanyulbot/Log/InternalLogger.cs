@@ -19,9 +19,9 @@ namespace hanyulbot
 		/// </summary>
 		/// <param name="TAG">Process TAG</param>
 		/// <param name="message">output message</param>
-		public static void d(string TAG, string message, params string formatparams)
+		public static void d(string TAG, string message)
 		{// [yymmdd hh:mm:ss:fff] [tag] message
-			Console.WriteLine (String.Format("[{0}] [{1}::debug]\t{2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
+			Console.WriteLine (String.Format("[{0}] [{1}::debug] {2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
 		}
 
 		/// <summary>
@@ -31,7 +31,7 @@ namespace hanyulbot
 		/// <param name="message">output message</param>
 		public static void i(string TAG, string message)
 		{
-			Console.WriteLine (String.Format("[{0}] [{1}::info]\t{2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
+			Console.WriteLine (String.Format("[{0}] [{1}::info] {2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
 		}
 
 		/// <summary>
@@ -41,7 +41,7 @@ namespace hanyulbot
 		/// <param name="message">output message</param>
 		public static void e(string TAG, string message)
 		{
-			Console.WriteLine (String.Format("[{0}] [{1}::error]\t{2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
+			Console.WriteLine (String.Format("[{0}] [{1}::error] {2}", DateTime.Now.ToString("yyMMdd HH:mm:ss.fff"), TAG, message));
 		}
 	}
 }

@@ -9,6 +9,7 @@
  * 
  */
 using System;
+using System.Collections;
 
 namespace hanyulbot
 {
@@ -16,7 +17,32 @@ namespace hanyulbot
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+			string TAG = "PGMain";
+			Console.Title = "Hanyul Bot";
+
+			ArrayList a = new ArrayList (Environment.GetCommandLineArgs ());
+
+			string binLocation = null;
+			string socketLocation = null;
+
+			if (a.Count > 2) {
+				int b = a.IndexOf ("--bin");
+				int c = a.IndexOf ("--socket");
+
+				if (b > 0)
+					binLocation = (string)a [b + 1];
+
+				if (c > 0)
+					socketLocation = (string)a [c + 1];
+			}
+
+			InternalLogger.d (TAG, "Starting Hanyulbot with Thread " + Environment.CurrentManagedThreadId);
+			TelegramCLI tcli = new TelegramCLI (binLocation, socketLocation);
+			tcli.Start ();
+			CSocket cs = CSocket.GetInstance("/tmp/telegram.tmp");
+			cs.Connect ();
+			cs.Receive ();
+			new System.Threading.ManualResetEvent (false).WaitOne ();
 		}
 	}
 }
