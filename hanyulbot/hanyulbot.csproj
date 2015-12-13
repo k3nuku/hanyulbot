@@ -19,7 +19,7 @@
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
-    <Commandlineparameters>--bin ../../../tg-bin/telegram-cli --socket /tmp/telegram.tmp</Commandlineparameters>
+    <Commandlineparameters>--bin ../../../telegram-cli/bin/telegram-cli --socket /tmp/telegram.tmp</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
